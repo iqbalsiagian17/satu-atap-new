@@ -1,73 +1,152 @@
-# React + TypeScript + Vite
+# SATU ATAP Community Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully static community website for SATU ATAP - a group of 11 college friends turned working professionals who maintain an active community.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **100% Static** - No backend, no database, no authentication
+- **8 Pages** - Home, About, Members, Member Details, Announcements, Gallery, Contact, Wrapped
+- **11 Member Profiles** - Each with unique styling and personalized content
+- **Interactive Gallery** - Filterable grid with lightbox modal viewer
+- **Wrapped Experience** - Spotify-style interactive slides
+- **Fully Responsive** - Mobile, tablet, and desktop optimized
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 18** + TypeScript
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first styling
+- **React Router DOM** - Client-side routing
+- **Static Data** - All content in TypeScript files
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── pages/           # All page components
+│   ├── HomePage.tsx
+│   ├── AboutPage.tsx
+│   ├── MembersPage.tsx
+│   ├── MemberDetailPage.tsx
+│   ├── AnnouncementsPage.tsx
+│   ├── GalleryPage.tsx
+│   ├── ContactPage.tsx
+│   └── WrappedPage.tsx
+├── components/      # Reusable components
+│   ├── Header.tsx
+│   └── Footer.tsx
+├── layouts/         # Layout wrappers
+│   └── MainLayout.tsx
+├── data/            # Static data files
+│   ├── members.ts
+│   ├── announcements.ts
+│   ├── gallery.ts
+│   └── wrapped.ts
+└── assets/          # Images and static files
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## 📝 Static Data Structure
+
+All content is defined in TypeScript files under `src/data/`:
+
+```typescript
+// src/data/members.ts
+export interface Member {
+  id: number;
+  slug: string;
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+  background: string;
+  customSections?: Array<{
+    title: string;
+    content: string;
+  }>;
+  photos?: string[];
+  // ...
+}
+```
+
+## 🎨 Key Design Principles
+
+- **No Backend Dependencies** - Completely static, no Supabase, Firebase, or any backend service
+- **Modular Components** - Clean separation of concerns
+- **Type Safety** - Full TypeScript support
+- **Performance** - Optimized for fast loading
+- **Accessibility** - Semantic HTML and ARIA labels
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server on http://localhost:5173
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+
+### Adding Content
+
+To add or modify content, edit the TypeScript files in `src/data/`:
+
+1. **Members** - Edit `src/data/members.ts`
+2. **Announcements** - Edit `src/data/announcements.ts`
+3. **Gallery** - Edit `src/data/gallery.ts`
+4. **Wrapped** - Edit `src/data/wrapped.ts`
+
+## 📦 Build Output
+
+The build creates a static site in the `dist/` directory:
+
+```
+dist/
+├── index.html
+├── assets/
+│   ├── index-[hash].css
+│   └── index-[hash].js
+└── vite.svg
+```
+
+This can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.)
+
+## 🚫 What's NOT Included
+
+- ❌ Database (no MongoDB, PostgreSQL, Supabase, etc.)
+- ❌ Authentication system
+- ❌ CMS integration
+- ❌ Backend API
+- ❌ Server-side rendering
+- ❌ Dynamic data fetching
+
+All content is hardcoded in TypeScript files for simplicity and performance.
+
+## 📄 License
+
+Private project for SATU ATAP community.
+
+## 🤝 Contributing
+
+This is a private community website. For content updates, contact the community administrators.
