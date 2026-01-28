@@ -1,0 +1,133 @@
+export interface GalleryItem {
+  id: number;
+  type: 'image' | 'video';
+  url: string;
+  thumbnail?: string;
+  title: string;
+  description: string;
+  date: string;
+  category: string;
+}
+
+export const galleryItems: GalleryItem[] = [
+  {
+    id: 1,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400',
+    title: 'Annual Reunion 2025',
+    description: 'Group photo from our annual reunion in Bandung',
+    date: '2025-03-15',
+    category: 'reunion',
+  },
+  {
+    id: 2,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=400',
+    title: 'Beach Day',
+    description: 'Fun day at the beach during our Bali trip',
+    date: '2025-07-20',
+    category: 'trip',
+  },
+  {
+    id: 3,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400',
+    title: 'Hiking Adventure',
+    description: 'Conquering Mount Bromo together',
+    date: '2025-05-10',
+    category: 'adventure',
+  },
+  {
+    id: 4,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400',
+    title: 'Game Night',
+    description: 'Virtual game night with the crew',
+    date: '2025-08-05',
+    category: 'gaming',
+  },
+  {
+    id: 5,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400',
+    title: 'Community Dinner',
+    description: 'Enjoying local cuisine together',
+    date: '2025-09-12',
+    category: 'dining',
+  },
+  {
+    id: 6,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400',
+    title: 'Sunrise Moments',
+    description: 'Beautiful sunrise from our camping trip',
+    date: '2025-06-25',
+    category: 'nature',
+  },
+  {
+    id: 7,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400',
+    title: 'City Tour',
+    description: 'Exploring Jakarta together',
+    date: '2025-04-18',
+    category: 'urban',
+  },
+  {
+    id: 8,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400',
+    title: 'Sunset Views',
+    description: 'Golden hour at Tanah Lot',
+    date: '2025-07-22',
+    category: 'nature',
+  },
+  {
+    id: 9,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400',
+    title: 'Team Building',
+    description: 'Team building activities and bonding',
+    date: '2025-10-05',
+    category: 'activities',
+  },
+  {
+    id: 10,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400',
+    title: 'Café Hangout',
+    description: 'Coffee and conversations',
+    date: '2025-11-15',
+    category: 'casual',
+  },
+  {
+    id: 11,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=400',
+    title: 'Working Together',
+    description: 'Collaborative work session',
+    date: '2025-02-20',
+    category: 'work',
+  },
+  {
+    id: 12,
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400',
+    title: 'Brainstorming Session',
+    description: 'Planning our next big adventure',
+    date: '2025-01-10',
+    category: 'planning',
+  },
+];
